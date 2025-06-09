@@ -59,4 +59,4 @@ fn main() {
 
     // Report the running total.
     println!("Total difference = {}", total)
-}
+} // end of main
