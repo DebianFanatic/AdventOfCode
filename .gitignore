@@ -1,0 +1,12 @@
+# Advent of Code specific exclusions
+**/data.*
+**/target/
+**/Cargo.lock
+**/Cargo-*
+
+# VS Code specific
+.vscode/
+
+# Operating System
+.DS_Store
+Thumbs.db
