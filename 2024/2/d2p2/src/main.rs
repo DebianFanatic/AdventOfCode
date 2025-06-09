@@ -15,6 +15,10 @@ fn main() {
     // that otherwise would have been "unsafe"
     // will be considered "safe".
 
+    println!("Advent of Code");
+    println!("Day 2, Part 2");
+    println!("Kent West - 9.June.2025");
+
     // Get input data.
     const DATAFILE: &str = "src/input.dat";
     let data: Vec<Vec<usize>> = get_dataset(DATAFILE);

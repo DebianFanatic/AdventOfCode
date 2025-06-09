@@ -1,6 +1,10 @@
 use std::fs::*;
 
 fn main() {
+    println!("Advent of Code");
+    println!("Day 2, Part 1");
+    println!("Kent West - 9.June.2025");
+
     // Get input data.
     let data: Vec<Vec<usize>> = get_data();
 
