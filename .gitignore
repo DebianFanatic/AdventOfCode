@@ -1,5 +1,6 @@
 # Advent of Code specific exclusions
-**/data.*
+**/data*
+**/input*
 **/target/
 **/Cargo.lock
 **/Cargo-*
