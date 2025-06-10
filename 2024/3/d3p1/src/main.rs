@@ -1,29 +1,26 @@
-// Sums up valid multipliers.
-// Result with test data should be  161
-
-use std::fs::*;
-
-const INPUT_FILE: &str = "src/input.dat";
+use regex::Regex;
+use std::fs::read_to_string;
 
 fn main() {
     println!("Advent of Code");
     println!("Day 3, Part 1");
     println!("Kent West - 9June.2025");
 
-    // Get data from input file, as a String.
-    let err_msg = format!("Error reading \"{}\".", INPUT_FILE);
-    let data_string: String = read_to_string(INPUT_FILE).expect(&err_msg);
+    // Get data.
+    let data = read_to_string("src/data.txt").expect("Error reading input data file.");
 
-    // Initialize a vector to hold the pairs.
-    let pairs: Vec<String> = Vec::new();
-    let data_chars = data_string.chars();
-    println!(
-        "The length of the string [as chars] is: {}",
-        &data_chars.clone().count()
-    );
-    println!("The chars are:");
-    for (x, ch) in data_chars.enumerate() {
-        println!("{}. {}", x, ch);
+    // Define the regex for which we're searching.
+    let re = Regex::new(r"mul\(\d+,\d+\)").unwrap();
+    let mut total = 0;
+
+    // Find all matches for that regex.
+    for mat in re.find_iter(&data) {
+        // For each match, strip all but the "number,number" pair portion
+        let pair = &mat.as_str()[4..(&mat.as_str().len() - 1)];
+        let pair: Vec<&str> = pair.trim().split(',').collect();
+        let x: i32 = pair[0].parse().expect("Error converting ASCII to i32");
+        let y: i32 = pair[1].parse().expect("Error converting ASCII to i32");
+        total += (x * y);
     }
-    println!();
+    println!("Total = {}", total);
 }
