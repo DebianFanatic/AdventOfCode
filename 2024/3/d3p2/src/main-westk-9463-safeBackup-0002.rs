@@ -18,7 +18,7 @@ fn main() {
     for mat in re.find_iter(&data) {
         match mat.as_str() {
             "do" => dont = false,
-            "don't" => dont = true,
+            &"don't" => dont = true,
             _ => {
                 if !dont {
                     // For each match, strip all but the "number,number" pair portion
