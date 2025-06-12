@@ -17,19 +17,17 @@ fn main() {
     // Find all matches for that regex.
     for mat in re.find_iter(&data) {
         match &mat.as_str() {
-            &"do" => dont = false,
-            &"don't" => dont = true,
+            "do" => dont = false,
+            "don't" => dont = true,
             _ => {
-                if !dont {
-                    // For each match, strip all but the "number,number" pair portion
-                    let pair = &mat.as_str()[4..(&mat.as_str().len() - 1)];
-                    let pair: Vec<&str> = pair.trim().split(',').collect();
-                    let x: i32 = pair[0].parse().expect("Error converting ASCII to i32");
-                    let y: i32 = pair[1].parse().expect("Error converting ASCII to i32");
-                    total += (x * y);
-                };
+                // For each match, strip all but the "number,number" pair portion
+                let pair = &mat.as_str()[4..(&mat.as_str().len() - 1)];
+                let pair: Vec<&str> = pair.trim().split(',').collect();
+                let x: i32 = pair[0].parse().expect("Error converting ASCII to i32");
+                let y: i32 = pair[1].parse().expect("Error converting ASCII to i32");
+                total += (x * y);
             }
-        };
+        }
     }
     println!("Total = {}", total);
 }
