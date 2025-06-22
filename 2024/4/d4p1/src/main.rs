@@ -1,12 +1,21 @@
+const COMMENTS: &str = r#"
+    Do a word search puzzle, finding all occurrences of the
+    word "XMAS", whether it's going up, down, forward,
+    backwards, or any of the diagonals - eight different
+    directions to check.
+
+    Advent of Code
+    Day 4, Part 1
+    Kent West - 21.June.2025
+"#;
+
 mod funcs;
 use funcs::*;
 
 const TARGET: &str = "XMAS";
 
 fn main() {
-    println!("Advent of Code");
-    println!("Day 4, Part 1");
-    println!("Kent West - 21.June.2025");
+    println!("{}", COMMENTS);
 
     // Read input file.
     let grid = get_data_grid("src/data.txt");
