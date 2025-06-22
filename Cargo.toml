@@ -7,7 +7,9 @@ members = [
     "2024/2/d2p1",
     "2024/2/d2p2",
     "2024/3/d3p1",
-    "2024/3/d3p2", # Add your newly created project here
+    "2024/3/d3p2",
+    "2024/4/d4p1",
+    "2024/4/d4p2", # Add your newly created project here
     # Add future projects (e.g., "2024/4/d4p1") here as you create them
     # You can use glob patterns if your structure allows, e.g., "2025/**" or "2025/*/*"
     # However, explicit listing is often safer for complex structures.
