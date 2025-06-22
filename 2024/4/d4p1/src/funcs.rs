@@ -1,6 +1,8 @@
 use std::fs::read_to_string;
 
-pub fn get_num_of_matches(
+/// "get_num_of_matches_per_cell" finds all matches in eight directions in
+/// a grid of text, and returns the count (0-8).
+pub fn get_num_of_matches_per_cell(
     grid: &Vec<Vec<char>>,
     cell: (usize, usize),
     target_string: &str,
@@ -119,7 +121,7 @@ pub fn get_num_of_matches(
     } // end NORTH EAST
 
     num_of_matches
-} // end of get_num_of_matches()
+} // end of get_num_of_matches_per_cell()
 
 pub fn get_data_grid(filename: &str) -> Vec<Vec<char>> {
     // Read data file into "data" String.

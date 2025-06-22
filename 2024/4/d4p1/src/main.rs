@@ -28,7 +28,7 @@ fn main() {
     for row in 0..lastrow {
         for col in 0..lastcolumn {
             let cell = (row, col);
-            total += get_num_of_matches(&grid, cell, TARGET);
+            total += get_num_of_matches_per_cell(&grid, cell, TARGET);
         }
     }
     println!("Total matches = {}", total);
