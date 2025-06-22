@@ -4,6 +4,11 @@ use funcs::*;
 const TARGET: &str = "XMAS";
 
 fn main() {
+    println!("Advent of Code");
+    println!("Day 4, Part 1");
+    println!("Kent West - 21.June.2025");
+
+    // Read input file.
     let grid = get_data_grid("src/data.txt");
 
     let lastrow = grid.len();
