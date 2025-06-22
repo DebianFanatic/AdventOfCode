@@ -15,37 +15,6 @@ fn main() {
         for col in 0..lastcolumn {
             let cell = (row, col);
             total += get_num_of_matches(&grid, cell, TARGET);
-
-            //     if is_forward_match(&grid, row, col, TARGET) {
-            //         total += 1;
-            //     }
-            //     if is_forward_down_match(&grid, row, col, TARGET) {
-            //         total += 1;
-            //     }
-
-            //     if is_down_match(&grid, row, col, TARGET) {
-            //         total += 1;
-            //     }
-
-            //     if is_backward_down_match(&grid, row, col, TARGET) {
-            //         total += 1;
-            //     }
-
-            //     if is_backward_match(&grid, row, col, TARGET) {
-            //         total += 1;
-            //     }
-
-            //     if is_backward_up_match(&grid, row, col, TARGET) {
-            //         total += 1;
-            //     }
-
-            //     if is_up_match(&grid, row, col, TARGET) {
-            //         total += 1;
-            //     }
-
-            //     if is_forward_up_match(&grid, row, col, TARGET) {
-            //         total += 1;
-            //     }
         }
     }
     println!("Total matches = {}", total);
