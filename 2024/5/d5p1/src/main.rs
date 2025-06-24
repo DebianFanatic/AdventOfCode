@@ -42,16 +42,11 @@ fn main() {
 } // end of main()
 
 fn is_order_correct(update: &str) -> bool {
-    // Convert &str to vector of integers.
-    let update: Vec<usize> = update
-        .split(",")
-        .map(|x| {
-            x.parse::<usize>()
-                .expect("Error converting &str ints to usize ints.")
-        })
-        .collect();
-    for page_num in &update {
+    // Split &str on commas to convert the &str to a Vec<&str>.
+    let page_nums: Vec<&str> = update.split(",").into_iter().collect();
+
+    for page_num in &page_nums {
         println!("Page Number = {}", page_num);
     }
-    if update[0] == 75 { true } else { false }
+    if page_nums[0] == "75" { true } else { false }
 } // end of is_order_correct()
