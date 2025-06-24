@@ -33,6 +33,25 @@ fn main() {
 
     println!("\n\tSection 2:");
     for line in updates {
-        println!("{}", line);
+        if is_order_correct(line) {
+            println!("CORRECT! - {}", line);
+        } else {
+            println!("         - {}", line)
+        }
     }
 } // end of main()
+
+fn is_order_correct(update: &str) -> bool {
+    // Convert &str to vector of integers.
+    let update: Vec<usize> = update
+        .split(",")
+        .map(|x| {
+            x.parse::<usize>()
+                .expect("Error converting &str ints to usize ints.")
+        })
+        .collect();
+    for page_num in &update {
+        println!("Page Number = {}", page_num);
+    }
+    if update[0] == 75 { true } else { false }
+} // end of is_order_correct()
